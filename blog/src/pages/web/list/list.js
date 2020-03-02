@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-
+import { List, Tag } from 'antd'
 class BlogList extends Component {
   render () {
     return (
