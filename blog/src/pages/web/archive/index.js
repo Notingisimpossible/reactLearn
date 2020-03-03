@@ -1,17 +1,13 @@
 import React, {Component} from 'react'
-import { List, Tag } from 'antd'
-import { color } from '../../../utils'
-import {FolderOutlined, TagOutlined, MessageOutlined, CalendarOutlined, EyeOutlined} from '@ant-design/icons'
-import './list.less'
-// import api from '../../../api/index.js'
-class BlogList extends Component {
+import {Card, Timeline} from 'antd'
+import {ClockCircleOutlined} from '@ant-design/icons'
+
+class Archive extends Component {
   constructor (props) {
-    super (props)
+    super(props)
 
     this.state = {
-      pageNo: 1,
-      pageSize:5,
-      data:[
+      data: [
         {
           "createdAt": "2019-11-11 10:57",
           "updatedAt": "2020-03-01 18:16",
@@ -96,77 +92,29 @@ class BlogList extends Component {
           ],
           "content": "<h3>koa-generator 搭建node服务器</h3>\n<p>通过 koa-generator 构建项目，全局安装</p>\n<pre>npm install -g koa-generato</pre>\n<p>创建 node-server 项目</p>\n<pre>koa node-server&nbsp;</pre>\n<p>进入项目</p>\n<pre>cd node-server&nbsp;</pre>\n<p>安装依赖</p>\n<pre>npn install</pre>\n<p>运行</p>\n<pre>npm dev</pre>\n<p>访问</p>\n<pre>&nbsp;localhost:3000</pre>\n<p><span style=\"color: rgb(0,0,0);font-family: Lucida Grande;\">出现 Hello Koa 2!，则表明项目运行成功</span>&nbsp;</p>\n<p>先看routes文件</p>\n<p>index.js</p>\n<pre>const router = require('koa-router')()<br>router.get('/', async (ctx, next) =&gt; {<br>  await ctx.render('index', {<br>    title: 'Hello Koa 2!'<br>  })<br>})<br>router.get('/string', async (ctx, next) =&gt; {<br>  ctx.body = 'koa2 string'<br>})<br>router.get('/json', async (ctx, next) =&gt; {<br>  ctx.body = {<br>    title: 'koa2 json'<br>  }<br>})<br>module.exports = router</pre>\n<p>users.js</p>\n<pre>const router = require('koa-router')()<br>router.prefix('/users')<br>router.get('/', function (ctx, next) {<br>  ctx.body = 'this is a users response!'<br>})<br>router.get('/bar', function (ctx, next) {<br>  ctx.body = 'this is a users/bar response'<br>})<br>module.exports = router</pre>\n<p>分别访问下列路由试试</p>\n<pre>http://localhost:3000/string | http://localhost:3000/users | http://localhost:3000/bar</pre>\n<p>大概你已经猜到了，koa-router 定义路由访问时返回相应的内容，那我们只需要把相应的 data 返回去就行了，只是我们的数据得从数据库查询出来。</p>\n<p>本地安装数据库此处就不再细说了，查阅资料可自行安装。</p>\n<p><a href=\"https://pan.baidu.com/s/1v18a7Z0E-VjM--oxmfwdFA\" target=\"_blank\">mysql可视化工具 Navicat</a>   提取码：ekzr</p>\n<p>安装后链接本地mysql</p>\n<p><span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">项目安裝 mysql</span>&nbsp;</p>\n<pre>npm install mysql --save</pre>\n<p><span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">安裝 </span><span style=\"color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: monospace;\">sequelize</span>&nbsp;</p>\n<pre>npm install --save sequelize</pre>\n<p><a href=\"https://itbilu.com/nodejs/npm/VkYIaRPz-.html#induction-install\" target=\"_blank\">sequelize 中文文档</a>   |  <a href=\"http://docs.sequelizejs.com/\" target=\"_blank\">sequelizejs 英文文档</a>&nbsp;</p>\n<p>新建 sequelize.js，建立连接池</p>\n<pre>const Sequelize = require('sequelize');<br>const sequelize = new Sequelize('dev', 'root', '123456', {<br>  host: 'localhost',<br>  dialect: 'mysql',<br>  operatorsAliases: false,<br>  pool: {<br>    max: 5,<br>    min: 0,<br>    acquire: 30000,<br>    idle: 10000<br>  }<br>})<br>sequelize<br>  .authenticate()<br>  .then(() =&gt; {<br>    console.log('MYSQL 连接成功......');<br>  })<br>  .catch(err =&gt; {<br>    console.error('链接失败:', err);<br>  });<br>// 根据模型自动创建表<br>sequelize.sync()<br>module.exports = sequelize</pre>\n<p>创建 model、controllers 文件夹 定义model：定义表结构；<span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">controller：定义对数据库的查询方法</span></p>\n<img src=\"https://upload-images.jianshu.io/upload_images/7256750-18968aeb5a1b5ddb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240\" alt=\"undefined\" style=\"float:left;height: auto;width: auto\"/>\n<p>以tag.js为例</p>\n<p>model：tag.js</p>\n<pre>const sequelize = require('../sequelize ')<br>const Sequelize = require('sequelize')<br>const moment = require('moment') // 日期处理库<br>// 定义表结构<br>const tag = sequelize.define('tag', { <br>  id: {<br>    type: Sequelize.INTEGER(11), // 设置字段类型<br>    primaryKey: true, // 设置为主建<br>    autoIncrement: true // 自增<br>  },<br>  name: {<br>    type: Sequelize.STRING,<br>    unique: { // 唯一<br>      msg: '已添加'<br>    }<br>  },<br>  createdAt: {<br>    type: Sequelize.DATE,<br>    defaultValue: Sequelize.NOW,<br>    get() {<br>      return moment(this.getDataValue('createdAt')).format('YYYY-MM-DD HH:mm') // this.getDataValue 获取当前字段value<br>    }<br>  },<br>  updatedAt: {<br>    type: Sequelize.DATE,<br>    defaultValue: Sequelize.NOW,<br>    get() {<br>      return moment(this.getDataValue('updatedAt')).format('YYYY-MM-DD HH:mm')<br>    }<br>  }<br>},<br>{<br>  freezeTableName: true // sequelize会自动使用传入的模型名（define的第一个参数）的复数做为表名 设置true取消默认设置<br>})<br>module.exports = tag</pre>\n<p><span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">controller:</span> tag.s  定义了 create、findAll、findAndCountAll、destroy 方法</p>\n<pre>const Tag = require('../model/tag')<br>const Op = require('sequelize').Op<br>const listAll = async (ctx) =&gt; {<br>  const data = await Tag.findAll()<br>  ctx.body = {<br>    code: 1000,<br>    data<br>  }<br>}<br>const list = async (ctx) =&gt; {<br>  const query = ctx.query<br>  const where = {<br>    name: {<br>      [Op.like]: `%${query.name}%`<br>    }<br>  }<br>  const {rows:data, count: total } = await Tag.findAndCountAll({<br>    where,<br>    offset: (+query.pageNo - 1) * +query.pageSize,<br>    limit: +query.pageSize,<br>    order: [<br>      ['createdAt', 'DESC']<br>    ]<br>  })<br>  ctx.body = {<br>    data,<br>    total,<br>    code: 1000,<br>    desc: 'success'<br>  }<br>}<br>const create = async (ctx) =&gt; {<br>  const params = ctx.request.body<br>  if (!params.name) {<br>    ctx.body = {<br>      code: 1003,<br>      desc: '标签不能为空'<br>    }<br>    return false<br>  }<br>  try {<br>    await Tag.create(params)<br>    ctx.body = {<br>      code: 1000,<br>      data: '创建成功'<br>    }<br>  }<br>  catch(err) {<br>    const msg = err.errors[0]<br>    ctx.body = {<br>      code: 300,<br>      data: msg.value + msg.message<br>    }<br>  }<br>}<br>const destroy = async ctx =&gt; {<br>  await Tag.destroy({where: ctx.request.body})<br>  ctx.body = {<br>    code: 1000,<br>    desc: '删除成功'<br>  }<br>}<br>module.exports = {<br>  list,<br>  create,<br>  listAll,<br>  destroy<br>}</pre>\n<p>在 routers 文件夹 index.js 中引入定义好的 tag <span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">controller</span> ，定义路由</p>\n<pre>const router = require('koa-router')()<br>const Tag = require('../controllers/tag')<br>// tag<br>router.get('/tag/list', Tag.list)<br>router.get('/tag/list/all', Tag.listAll)<br>router.post('/tag/create', Tag.create)<br>router.post('/tag/destroy', Tag.destroy)<br>module.exports = router<br>/* 如每个 route 是单独的文件，可以使用 router.prefix 定义路由前缀<br>router.prefix('/tag')<br>router.get('/list', Tag.list)<br>router.get('/list/all', Tag.listAll)<br>router.post('/create', Tag.create)<br>router.post('/destroy', Tag.destroy)<br>*/</pre>\n<p>因为 app 中 已经引入 <span style=\"color: rgba(0,0,0,0.65);background-color: rgb(255,255,255);font-size: 14px;\">routers </span> 中的 index.js 调用了 app.use了，所以此处不需再引入</p>\n<p>在浏览器里输入 localhost:3000/tag/list 就可以看到返回的数据结构了，只不过 data 为空数组，因为我们还没添加进去任何数据</p>\n<h4>到这里，model 定义表结构、sequelize操作数据库、koa-router 定义路由 这一套流程算是完成了，其他表结构，接口 都是一样定义的</h4>\n<p><a href=\"https://github.com/gzwgq222/blog-server\" target=\"_blank\">blog-server 源码</a>&nbsp;</p>\n<p>有问题欢迎提 <a href=\"https://github.com/gzwgq222/blog-server/issues\" target=\"_blank\">Issues </a>&nbsp;</p>\n<p>错误之处，望斧正</p>\n<p>觉得不错或对你有帮助，<a href=\"https://github.com/gzwgq222/blog-server\" target=\"_blank\">欢迎 star</a>&nbsp;</p>\n"
         }
-      ]    
+      ]
     }
   }
-  // componentDidMount () {
-  //   this.getList()
-  // }
-  // async getList () {
-  //   this.setState({loading: true})
-  //   const params = {
-  //     pageNo: this.state.pageNo,
-  //     pageSize: this.state.pageSize
-  //   }
-  //   const { data, code, total } = await api.get('/article/list', params)
-  //   if (code === 1000) {
-  //     this.setState({data, total, })
-  //   }
-  // }
 
   render () {
-    const IconText = ({icon, text}) => (
-      <span>
-        {React.createElement(icon, {style:{marginRight:8}})}
-        {text}
-      </span>
-    )
+    console.log(this.state.data)
     return (
-      <div className="list-wrapper">
-        <List
-         pagination={{
-           onChange: page => {
-             console.log(page)
-           },
-           pageSize:this.state.pageSize
-         }} 
-         dataSource={this.state.data} renderItem={(item, index) => (
-          <List.Item
-            key={index}
-            actions={[
-              <IconText icon={TagOutlined} text={
-                item.tag.map(v => (
-                  <Tag color={color[Math.floor(Math.random()*color.length)]} key={item + Math.random()}>{v}</Tag>
-                ))
-              }
-               key="list-vertical-star-o" />,
-              <IconText icon={FolderOutlined} text={
-                item.category.map(v => (
-                  <Tag color={color[Math.floor(Math.random()*color.length)]} key={item + Math.random()}>{v}</Tag>
-                ))
-              } key="list-vertical-like-o" />,
-              <IconText icon={CalendarOutlined} text={item.createdAt}  />,
-              <IconText icon={EyeOutlined} text={`${item.readedCount}次预览`}  />
-            ]}
-          >
-            <List.Item.Meta 
-              // avatar={<Avatart src={item.avatar}/>}
-              title={item.title}
-              description={item.summary}
-            />
-          </List.Item>
-        )}>
-          {/* {
-            this.state.data.map((val) => (
-              <List.Item key={val.id}>
-                {val.title}
-              </List.Item>
-            ))
-          } */}
-        </List>
+      <div className="article-timeLine">
+        <Card>
+          <Timeline style={{paddingTop:'15px',paddingLeft:'20px'}}>
+            <Timeline.Item dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />} color="red">
+              <li style={{fontSize:'25px'}}>2019</li>
+            </Timeline.Item >
+            {
+              this.state.data.map(v => (
+                <Timeline.Item style={{color:'#1890ff',cursor:'pointer'}} key={v.id}>{v.createdAt.substring(0, v.createdAt.indexOf(' '))}{`\xa0\xa0\xa0\xa0\xa0\xa0${v.title}`}</Timeline.Item>
+              ))
+            }
+          </Timeline>
+        </Card>
       </div>
     )
   }
 }
 
-export default BlogList
+export default Archive
