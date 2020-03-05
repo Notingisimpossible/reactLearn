@@ -103,7 +103,7 @@ class Archive extends Component {
         <Card>
           <Timeline style={{paddingTop:'15px',paddingLeft:'20px'}}>
             <Timeline.Item dot={<ClockCircleOutlined style={{ fontSize: '16px' }} />} color="red">
-              <li style={{fontSize:'25px'}}>2019</li>
+              <span style={{fontSize:'20px'}}>2019</span>
             </Timeline.Item >
             {
               this.state.data.map(v => (

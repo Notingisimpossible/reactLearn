@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Layout, Row, Col, Menu} from 'antd'
 import {Link} from 'react-router-dom'
-import { SmileOutlined, HomeOutlined } from '@ant-design/icons'
+import {SmileOutlined} from '@ant-design/icons'
 import menus from '../../../Router/web'
 import './index.less'
 
@@ -21,9 +21,9 @@ class HeaderCustom extends Component {
     const key = sessionStorage.getItem('webKey') || '0'
     const list = menus.filter( v => v.menu)
     const menuList = list.map((item, i) => {
-      return <Menu.Item key={i}>
+      return <Menu.Item key={i} onClick={() => {sessionStorage.setItem('webKey', String(i))}}>
               <Link to={item.path}>
-                {/* {item.icon} */}
+                <item.icon />
                 <span className="nav-text">{item.title}</span>
               </Link>
             </Menu.Item>
