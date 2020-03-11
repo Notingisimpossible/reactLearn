@@ -2,8 +2,11 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css'
 import store from './store/index'
+import axios from 'axios'
+
+
 // import {CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_LIST} from './store/actionsTypes'
-import {getTodoList, getInputChangeAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
+import {getInitList, getInputChangeAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
 
 // store 创建
 import TodoListUI from './store/TodoListUI'
@@ -25,8 +28,10 @@ class TodoList extends Component {
 
 
   componentDidMount() {
-    const action = getTodoList()
-    store.dispatch(action) // 因为此刻的store已经集成了thunk功能，所以支持dispatch一个函数，这个函数会自动执行
+    const action = getInitList()
+    store.dispatch(action)
+    // const action = getTodoList()
+    // store.dispatch(action) // 因为此刻的store已经集成了thunk功能，所以支持dispatch一个函数，这个函数会自动执行
     // store在集成thunk之后，再调用一个方法时，会自动给方法分配一个dispatch
   }
 
