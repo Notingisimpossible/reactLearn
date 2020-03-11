@@ -3,8 +3,7 @@ import React, {Component} from 'react'
 import 'antd/dist/antd.css'
 import store from './store/index'
 // import {CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_LIST} from './store/actionsTypes'
-import { getInputChangeAction, getAddItemAction, getDeleteItemAction, initListAction } from './store/actionCreators'
-import axios from 'axios'
+import {getTodoList, getInputChangeAction, getAddItemAction, getDeleteItemAction } from './store/actionCreators'
 
 // store 创建
 import TodoListUI from './store/TodoListUI'
@@ -23,14 +22,12 @@ class TodoList extends Component {
     store.subscribe(this.hanleStoreChange) // 每次数据改变，仓库都会有一个subribe函数自动执行
   }
 
-  componentDidMount(props) {
-    axios.get('https://api.github.com/users/octocat/gists').then((res) => {
-      // console.log(res)
-      const data = res.data
-      console.log(data)
-      const action = initListAction(Array.from(Object.keys(data[0].owner)))
-      store.dispatch(action)
-    })
+
+
+  componentDidMount() {
+    const action = getTodoList()
+    store.dispatch(action) // 因为此刻的store已经集成了thunk功能，所以支持dispatch一个函数，这个函数会自动执行
+    // store在集成thunk之后，再调用一个方法时，会自动给方法分配一个dispatch
   }
 
   hanleStoreChange(){
