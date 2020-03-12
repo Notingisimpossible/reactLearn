@@ -9,7 +9,6 @@ const composeEnhanders =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
 
     }) : compose
-
 const sagaMiddleware = createSagaMiddleware()
 const enhancer = composeEnhanders(
   // applyMiddleware(ReduxThunk)//引入中间件

@@ -2,7 +2,6 @@
 import React, {Component} from 'react'
 import 'antd/dist/antd.css'
 import store from './store/index'
-import axios from 'axios'
 
 
 // import {CHANGE_INPUT_VALUE, ADD_TODO_ITEM, DELETE_TODO_LIST} from './store/actionsTypes'
