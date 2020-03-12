@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 // 定义高阶组件HOc
-function HOC(wrappedComponent) {
+function HOC(WrappedComponent) {
   return class extends Component {
     constructor (props) {
       super(props)
@@ -12,10 +12,11 @@ function HOC(wrappedComponent) {
     }
 
     onChange = (event) => {
+      // this.setState 在这里！！！是异步的
       this.setState({
         name: event.target.value
       })
-      // console.log
+      console.log(this.state.name)
     }
     render () {
       const newProps = {
@@ -24,7 +25,7 @@ function HOC(wrappedComponent) {
           onChange: this.onChange
         }
       }
-      return <wrappedComponent {...newProps}/>
+      return <WrappedComponent {...newProps}/>
     }
   }
 }
