@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 // import store from './store/index'
 import {connect} from 'react-redux'
-
 class TodoList extends Component {
-
   render () {
     return(
       <div>
         <div>
           <input value = {this.props.inputValue} onChange={this.props.changeInputValue}/>
-          <button>提交</button>
+          <button onClick={this.props.addList.bind(this)}>提交</button>
         </div>
         <ul>
-          <li>dell</li>
+          {this.props.list.map((list, index) => (
+            <li onClick={() => {this.props.deleteList(index)}} key={index}>{list}</li>
+          ))}
         </ul>
       </div>
     )
@@ -20,7 +20,8 @@ class TodoList extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    inputValue: state.inputValue
+    inputValue: state.inputValue,
+    list: state.list
   }
 }
 const mapDispatchToProps = (dispatch) => { // 把store.dispatch 映射到props
@@ -29,6 +30,20 @@ const mapDispatchToProps = (dispatch) => { // 把store.dispatch 映射到props
       const action = {
         type: 'change_input_value',
         value: e.target.value
+      }
+      dispatch(action)
+    },
+    addList() {
+      const action = {
+        type:"add_list",
+        value: this.props.inputValue
+      }
+      dispatch(action)
+    },
+    deleteList(index) {
+      const action = {
+        type:"delete_list",
+        index
       }
       dispatch(action)
     }
