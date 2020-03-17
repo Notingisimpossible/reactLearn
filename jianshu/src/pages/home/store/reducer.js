@@ -1,23 +1,34 @@
-import {fromJS} from 'immutable'
+import { fromJS } from 'immutable'
+import * as constants from './constants'
+
 // immutable.js
 // facebook
 // immutable对象
 
-const defaultState = fromJS ({
-  topicList: [
-    {
-      id: 1,
-      title: '社会热点',
-      imgUrl: 'https://upload-images.jianshu.io/upload_images/11864358-622c38825ebb854e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240',
-    },
-    {
-      id: 2,
-      title: '手绘',
-      imgUrl: 'https://upload.jianshu.io/users/upload_avatars/3950651/acfaa0ce-42fe-424a-b7c8-9a0136fb96ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp',
-    }
-  ]
+const defaultState = fromJS({
+  topicList: [],
+  articleList: [],
+  recommendList: [],
+  articlePage: 1,
+  showScroll: false
 })
 
 export default (state = defaultState, action) => {
-  return state
+  switch (action.type) {
+    case constants.CHANGE_HOME_DATA:
+      return state.merge({ // 把多个对象合并成一个对象
+        topicList: fromJS(action.topicList),
+        articleList: fromJS(action.articleList,),
+        recommendList: fromJS(action.recommendList)
+      })
+    case constants.ADD_ARTICLE_LIST:
+      return state.merge({
+        'articleList': state.get('articleList').concat(action.list),
+        articlePage: action.nextPage
+      })
+    case constants.TOGGLE_SCROLL_TOP:
+      return state.set('showScroll', action.show)
+    default:
+      return state
+  }
 }

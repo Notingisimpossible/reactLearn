@@ -10,13 +10,13 @@ export const IconGlobalstyle = createGlobalStyle`
   url('./iconfont.svg?t=1584077131297#iconfont') format('svg'); 
   } */
   @font-face {
-    font-family: 'iconfont';  /* project id 1689142 */
-    src: url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.eot');
-    src: url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.woff2') format('woff2'),
-    url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.woff') format('woff'),
-    url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_1689142_dfyk9fxt4al.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 1689142 */
+  src: url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.eot');
+  src: url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1689142_tbpllx3ks0r.svg#iconfont') format('svg');
   }
   .iconfont {
     font-family: "iconfont" !important;
