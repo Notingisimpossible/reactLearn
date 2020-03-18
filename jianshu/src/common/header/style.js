@@ -31,6 +31,13 @@ export const NavItem = styled.div `
   padding: 0 15px;
   font-size: 16px;
   color: #333;
+  a{
+    text-decoration: none;
+    color: #333;
+    &.active {
+      color: #ea6f5a;
+    }
+  }
   &.left {
     float: left;
   }
@@ -39,8 +46,8 @@ export const NavItem = styled.div `
     color: #969696;
   }
   &.active {
-    color: #ea6f5a;
-  }
+      color: #ea6f5a;
+    }
   &.active:hover{
     cursor: pointer;
   }
