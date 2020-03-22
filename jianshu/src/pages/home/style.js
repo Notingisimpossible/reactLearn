@@ -85,10 +85,140 @@ export const RecommendItem = styled.div `
 `
 export const WriterWrapper = styled.div `
   width: 278px;
+  height: 60px;
+  line-height: 60px;
+  ul{
+    width: 278px;
+    height: 50px;
+  }
+  .imges{
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-top: 10px;
+  }
+  img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 14px;
+      color: #dcdcdc;
+    }
+  .name-writer{
+    height: 50px;
+    float: left;
+    .name{
+      position: relative;
+      top: -10px;
+      height: 30px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+    .tips{
+      height: 20px;
+      box-sizing: border-box;
+      font-size: 12px;
+      color: #969696;
+      position: relative;
+      top: -20px;
+    }
+    margin-left: 10px;
+  }
+  /* .name{
+    width: 250px;
+    height: 20px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-top: 5px;
+    list-style: none;
+  }
+  .tips{
+    font-size: 12px;
+    color: #dcdcdc;
+  } */
+  .focus{
+    float: right;
+    color: red;
+    a{
+      text-decoration: none;
+      color: green;
+    }
+  }
+  
+`
+export const Appload = styled.div `
+  width: 278px;
+  height: 66px;
   border: 1px solid #dcdcdc;
-  height: 300px;
-  line-height: 300px;
-  text-align: center;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  :hover{
+    div:first-child{
+      display:block;
+    }
+  }
+  .showImg{
+    position: absolute;
+    top: 70px;
+    background-color: #fff;
+    width: 220px;
+    height: 220px;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    img{
+      width: 180px;
+      height: 180px;
+      margin-top: 20px;
+    }
+  }
+  .pic{
+    width:50px;
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    float: left;
+  }
+  ul{
+    width: auto;
+    height: 50px;
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    li:first-child{
+      color: #333;
+      font-size: 15px;
+      padding-top: 4px;
+    }
+    li:last-child{
+      font-size: 13px;
+      color: #999;
+      margin-top: 8px;
+    }
+    :hover{
+      
+    }
+  }
+`
+export const RecommendWriter = styled.div `
+  height: 20px;
+  margin-top: 30px;
+  ul li:first-child{
+    float: left;
+    font-size: 14px;
+    color: #969696;
+  }
+  ul li:last-child{
+    float: right;
+    a{
+      text-decoration: none;
+      font-size: 14px;
+      color: #969696;
+    }
+  }
 `
 export const LoadMore = styled.div `
   width: 100%;
@@ -115,4 +245,33 @@ export const BackTop = styled.div `
     background-color: #dcdcdc;
     cursor: pointer;
   }
+  :hover .backTopTip{
+    display: block;
+  }
+  :hover .iconfont{
+    position: relative;
+    top: -40px;
+  }
+  .backTopTip{
+    font-size: 10px;
+    text-align: center;
+    width: 60px;
+    height: 40px;
+    background-color: rgb(70, 70, 67);
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+    position: relative;
+    right: 80px;
+
+  }
+`
+export const MoreWriter = styled.button `
+  width: 270px;
+  text-align: center;
+  height: 30px;
+  color: #333;
+  margin-top: 10px;
+  margin-left: 4px;
+  cursor: pointer;
 `

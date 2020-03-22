@@ -56,6 +56,33 @@
         "id": 4,
         "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
       }
+    ],
+    "writerList": [
+      {
+        "title": "董克平日记",
+        "tip": "写了889.7k字·3.2k喜欢",
+        "imgUrl": "https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+      },
+      {
+        "title": "简钻首席小专家",
+        "tip": "写了31.2.7k字·13.2k喜欢",
+        "imgUrl": "https://upload.jianshu.io/users/upload_avatars/14715425/e0668349-8c75-43db-8a9d-c388e5f00d0d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+      },
+      {
+        "title": "蜗牛的日记",
+        "tip": "写了819.7k字·3.2k喜欢",
+        "imgUrl": "https://upload.jianshu.io/users/upload_avatars/278/0778727c-c557-4ffb-929c-6ee182a58145.png?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+      },
+      {
+        "title": "董金旻的人生",
+        "tip": "写了152.7k字·33.2k喜欢",
+        "imgUrl": "https://upload.jianshu.io/users/upload_avatars/301940/189d69dd-af7c-4290-9e2c-89e98acf3603.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+      },
+      {
+        "title": "蒋哥哥的骚操作",
+        "tip": "写了666.6k字·66.6k喜欢",
+        "imgUrl": "https://upload.jianshu.io/users/upload_avatars/3730494/4a86a2a7-d5b9-47f1-969a-d8ef4711488b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp"
+      }
     ]
   }
 }

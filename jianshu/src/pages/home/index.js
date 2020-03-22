@@ -38,7 +38,10 @@ class Home extends Component {
        </HomeRight>
        {
          this.props.showScroll ? 
-         <BackTop onClick={this.handleScrollTop}><span className="iconfont">&#xe684;</span></BackTop> 
+         <BackTop onClick={this.handleScrollTop}>
+           <span className="backTopTip">回到顶部</span>
+           <span className="iconfont">&#xe684;</span>
+          </BackTop> 
          : null
        }
       </HomeWrapper>
