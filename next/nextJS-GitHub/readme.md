@@ -19,5 +19,9 @@
     query:{需要传递的参数}  
   })  
   - <Link href="路由" as '装饰路由'><Link>
-  - 在server.js中通过router.get方法找到修饰路由对应的路由返回相应数据
+  - 在server.js中通过(koa-router)router.get方法找到修饰路由对应的路由返回相应数据
+# getInitialProps
+
+# Hooks 让函数组件具有类组件的能力
+
   
