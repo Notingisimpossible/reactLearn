@@ -7,6 +7,7 @@ const defaultState = fromJS ({
   check3: false,
   check4: false,
   check5: false,
+  focused: false
 })
 const checkChange = (state,checks) => {
   switch(checks){
@@ -58,6 +59,12 @@ export default (state = defaultState, action) => {
   if(action.type === types.WRAPPER_CHECK) {
     // immutable对象的set方法会结合之前immutable对象的值和设置的值结合好之后返回一个新对象
     return checkChange(state,action.checks)
+  }
+  if(action.type === types.INPUT_FOCUSED) {
+    return state.set('focused', true)
+  }
+  if(action.type === types.INPUT_BLUR) {
+    return state.set('focused', false)
   }
  
   return state

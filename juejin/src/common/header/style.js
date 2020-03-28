@@ -5,6 +5,7 @@ export const HeaderWrapper = styled.div `
   position: relative;
   height: 60px;
   border-bottom: 1px solid #f0f0f0;
+  background-color: #fff;
 `
 export const Logo = styled.a.attrs({
   href: '/'
@@ -55,10 +56,14 @@ export const NavSearchFrom = styled.div `
   margin-left: 150px;
   border: 1px solid hsla(0,0%,59.2%,.2);
   background-color: rgba(227,231,236,.2);
+  &.focused{
+    border: 1px solid #006cff;
+  }
   .iconfont{
     color:hsla(0,0%,59.2%,.2);
-    :hover{
-      cursor: pointer;
+    cursor: pointer;
+    &.focused{
+      color: #006cff;
     }
   }
 `
@@ -74,6 +79,7 @@ export const NavSearch = styled.input.attrs({
   outline: none;
   margin-top: 5px;
   margin-left: 5px;
+
 `
 export const Addition = styled.div `
   float: right;
