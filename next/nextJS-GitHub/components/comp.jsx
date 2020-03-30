@@ -1,2 +1,2 @@
 
-// export default ({children}) => <button>{children}</button>
+export default ({children}) => <span>Lazy Component</span>

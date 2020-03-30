@@ -1,0 +1,1 @@
+{"ast":null,"code":"// export default ({children}) => <button>{children}</button>","map":{"version":3,"sources":["F:/reactLearn/next/nextJS-GitHub/components/comp.jsx"],"names":[],"mappings":"AACA","sourcesContent":["\r\n// export default ({children}) => <button>{children}</button>"]},"metadata":{},"sourceType":"script"}

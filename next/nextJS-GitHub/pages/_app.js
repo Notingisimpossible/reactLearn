@@ -2,12 +2,12 @@ import App from 'next/app'
 import 'antd/dist/antd.css'
 import Layout from '../components/layout'
 class MyApp extends App {
-  static async getInitialProps(Component) {
-    console.log(Component)
+  static async getInitialProps({Component,ctx}) {
+    // console.log(Component)
     let pageProps 
     if (Component.getInitialProps) {
-      pageProps = Component.getInitialProps()
-      console.log(pageProps)
+      pageProps = await Component.getInitialProps(ctx)
+      // console.log(pageProps)
     }
     return {
       pageProps

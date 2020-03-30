@@ -15066,24 +15066,31 @@ var MyApp = /*#__PURE__*/function (_App) {
     }
   }], [{
     key: "getInitialProps",
-    value: function getInitialProps(Component) {
-      var pageProps;
+    value: function getInitialProps(_ref) {
+      var Component, ctx, pageProps;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getInitialProps$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              console.log(Component);
+              Component = _ref.Component, ctx = _ref.ctx;
 
-              if (Component.getInitialProps) {
-                pageProps = Component.getInitialProps();
-                console.log(pageProps);
+              if (!Component.getInitialProps) {
+                _context.next = 5;
+                break;
               }
 
+              _context.next = 4;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(Component.getInitialProps(ctx));
+
+            case 4:
+              pageProps = _context.sent;
+
+            case 5:
               return _context.abrupt("return", {
                 pageProps: pageProps
               });
 
-            case 3:
+            case 6:
             case "end":
               return _context.stop();
           }
