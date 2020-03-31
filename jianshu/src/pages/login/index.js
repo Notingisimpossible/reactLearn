@@ -32,6 +32,7 @@ const mapState = (state) => ({
 })
 const mapDispatchToProps =(dispatch) => ({
   login (accountElement, passwordElement) {
+    console.log('123')
     const action = actionCreators.login(accountElement.value, passwordElement.value)
     action(dispatch)
     // console.log(accountElement.value, passwordElement.value)

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {WriterWrapper, Appload, RecommendWriter, MoreWriter} from '../style'
 import {connect} from 'react-redux'
+import { actionCreators } from '../store'
 class Writer extends Component {
   render () {
     const {list} = this.props
@@ -62,4 +63,5 @@ class Writer extends Component {
 const mapState = (state) => ({
   list: state.home.get('writerList')
 })
+
 export default connect(mapState, null) (Writer)
