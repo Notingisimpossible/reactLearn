@@ -7,12 +7,20 @@ import {
 class AsideRecommend extends React.Component{
 
   render() {
+    const {aboutList} = this.props
+    console.log('aboutList',aboutList)
     return(
       <Tools>
-        <ToolsList>
-          <img src="https://b-gold-cdn.xitu.io/v3/static/img/collections.945b9ae.png" alt="图片加载失败"></img>
-          <span>收藏集</span>
-        </ToolsList>
+        {
+          aboutList.map((item, index) => {
+            return(
+              <ToolsList key={index}>
+                <img src={item.get('imgUrl')} alt="图片加载失败"></img>
+                <span>{item.get('title')}</span>
+              </ToolsList>
+            )
+          })
+        }
       </Tools>
     )
   }

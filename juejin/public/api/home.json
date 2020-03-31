@@ -1,12 +1,168 @@
 {
   "success": true,
-  "data": [
-    {
-      "id": "1",
-      "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
-      "title": "艰难用echarts模拟甘特图😭，直到我发现了dhtmlxGantt",
-      "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
-      "username": "前端小黑"
-    }
-  ]
+  "data": {
+    "homeContentList":[
+      {
+        "id": "1",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "2",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "3",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "4",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "5",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "6",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "7",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "8",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "9",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      },
+      {
+        "id": "10",
+        "content": "结果均是以失败告终（不符合业务需求，改造难度大）。 调整一下心情，重新踏上甘特图组件调研之路 🤕，终于，被我发现了 Top 5 : Best free jQuery and JavaScript Dynamic Gantt Charts for web application…",
+        "title": "艰难用echarts模拟甘特图😭",
+        "avatarLarge": "https://user-gold-cdn.xitu.io/2019/8/20/16cae6662c648b35?w=400&h=400&f=jpeg&s=46429",
+        "username": "前端小黑",
+        "tag": "前端",
+        "class":"专栏",
+        "publicTime": "15分钟前"
+      }
+    ],
+    "hotTagList":[
+      {
+        "id": 1,
+        "tagName":"架构"
+      },
+      {
+        "id": 2,
+        "tagName":"开源"
+      },
+      {
+        "id": 3,
+        "tagName":"算法"
+      },
+      {
+        "id": 4,
+        "tagName":"gitHub"
+      },
+      {
+        "id": 5,
+        "tagName":"面试"
+      },
+      {
+        "id": 6,
+        "tagName":"代码规范"
+      },
+      {
+        "id": 7,
+        "tagName":"产品"
+      },
+      {
+        "id": 8,
+        "tagName":"掘金翻译计划"
+      }
+    ],
+    "aboutList":[
+      {
+        "id":1,
+        "title": "收藏集",
+        "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/collections.945b9ae.png"
+      },
+      {
+        "id":1,
+        "title": "掘金社区漫游指南",
+        "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/book.75582b2.png"
+      },
+      {
+        "id":1,
+        "title": "下载掘金浏览器插件",
+        "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-extension-icon.4b79fb4.png"
+      },
+      {
+        "id":1,
+        "title": "前往掘金翻译者计划",
+        "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-miner.b78347c.png"
+      },
+      {
+        "id":1,
+        "title": "商务合作",
+        "imgUrl": "https://b-gold-cdn.xitu.io/v3/static/img/juejin-partner.4dd2d8c.png"
+      }
+    ]
+  }
 }

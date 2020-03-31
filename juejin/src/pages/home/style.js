@@ -189,8 +189,6 @@ export const Tag = styled.div `
   height: 1208px;
   width: 240px;
   float: right;
-  position: relative;
-  top: -46px;
 `
 export const TagRegister = styled.div `
   width: 240px;

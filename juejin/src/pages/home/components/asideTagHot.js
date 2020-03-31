@@ -8,20 +8,25 @@ import {
 class AsideTagHot extends React.Component {
 
   render(){
+    const {hotTagList} = this.props
     return (
       <TagHot>
         <TagHotHeader>
           <p>热门标签</p>
           <p><a target="_blank" href="https://juejin.im/subscribe/all" rel="noopener noreferrer">查看全部</a></p>
         </TagHotHeader>
-        <TagList>
-          <List>
-            架构
-        </List>
-          <List>
-            掘金翻译计划
-        </List>
-        </TagList>
+          <TagList>
+            {
+              hotTagList.map((item) => {
+                return(
+                  
+                    <List key={item.get("id")}>
+                      {item.get('tagName')}
+                    </List>
+                )
+              })
+            }
+          </TagList>
       </TagHot>
     )
   }

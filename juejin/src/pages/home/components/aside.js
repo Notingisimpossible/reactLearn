@@ -10,15 +10,21 @@ import AsideFocusUs from './asideFocus'
 import AsideAboutUs from './asideAboutUs'
 class Aside extends React.Component{
 
+  // state({
+  //   hotTagList: [],
+  //   aboutList:[]
+  // })
+
   render() {
+    const {hotTagList, aboutList} = this.props
     return(
       <Tag>
           <AsideReg />
-          <AsideTagHot />
+          <AsideTagHot hotTagList={hotTagList}/>
           <a href="https://juejin.im/app" rel="noopener noreferrer" target="_blank" style={{textDecoration: "none"}}>
            <AsideDownLoad />
           </a>
-          <AsideRecommend/>
+          <AsideRecommend aboutList={aboutList}/>
           <AsideFocusUs />
           <AsideAboutUs />
         </Tag>
