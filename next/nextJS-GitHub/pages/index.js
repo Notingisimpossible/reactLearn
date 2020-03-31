@@ -1,5 +1,6 @@
 
 import Router from 'next/router'
+import store from '../store/store'
 
 const events = [
   'routeChangeStart',
@@ -27,7 +28,7 @@ export default () => {
   //     }
   // }, 'test/b/2')
   // }
-
+  console.log(store)
   return (
     <>
      <span>Index</span>

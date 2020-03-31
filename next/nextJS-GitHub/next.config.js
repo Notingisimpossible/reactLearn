@@ -20,5 +20,5 @@ if(typeof require !== 'undefined') {
 }
 
 module.exports = withCss({
-  distDir: 'dest'
+  // distDir: 'dest'
 })

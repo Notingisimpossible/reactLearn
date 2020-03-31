@@ -21,6 +21,14 @@
     "/_polyfills": [
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
+    ],
+    "/a": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/test/b": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
     ]
   }
 }
