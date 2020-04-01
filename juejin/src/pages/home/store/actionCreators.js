@@ -20,3 +20,13 @@ const changeHomeData = (result) => ({
   aboutUsList: result.aboutList,
   hotList: result.hotTagList
 })
+
+export const changeHeaderCheck = (check) => ({
+  type: actionTypes.CHANGECHECK,
+  check
+})
+
+export const changeContentCheck = (contentCheck) => ({
+  type: actionTypes.CHANGECONTENTCHECK,
+  contentCheck
+})

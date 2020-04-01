@@ -20,12 +20,12 @@ export const NavItem = styled.div `
   height: 41px;
   width: auto;
   float: left;
-  color:#71777c;
   font-size: 14px;
   margin-right: 20px;
   margin-top: 13px;
+  color:#71777c;
   cursor: pointer;
-  :first-child{
+  &.color{
     color:#006cff;
   }
   :hover{
@@ -51,7 +51,7 @@ export const HeaderItem = styled.div `
   padding-left: 15px;
   color: #71777c;
   cursor: pointer;
-  :first-child{
+  &.color{
     color:#006cff;
   }
   &.hotList{
@@ -74,6 +74,7 @@ export const Content = styled.div `
   background-color: #fff;
   float: left;
   margin-top: 1px;
+  cursor: pointer;
   :hover{
     background-color: #fcfcfc;
     ul li div:last-child{
@@ -88,7 +89,6 @@ export const Content = styled.div `
   }
   ul li{
     width: 400px;
-    cursor: pointer;
     float: left;
   }
   ul .title{
@@ -178,11 +178,14 @@ export const Content = styled.div `
   ul li:last-child{
     width: 60px;
     height: 60px;
-    background-image: url(https://user-gold-cdn.xitu.io/158520462771659901abb0ab0e999ae0f730f092ffb15.jpg?imageView2/1/w/120/h/120/q/85/format/webp/interlace/1);
     background-size: contain;
     float: right;
     position: relative;
     top: -40px;
+    img{
+      width: 60px;
+      height: 60px;
+    }
   }
 `
 export const Tag = styled.div `
