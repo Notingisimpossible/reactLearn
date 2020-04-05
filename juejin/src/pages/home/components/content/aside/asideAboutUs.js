@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   AboutUS
-} from '../style'
+} from '../../../style'
 const AsideAboutUs = (props) => {
   return(
     <AboutUS>

@@ -6,7 +6,7 @@ import {
   RegisterInput,
   RegisterButton,
   RegisterFoot
-} from '../style.js'
+} from '../../../style.js'
 
 const AsideReg = (props) => {
   return(

@@ -23,10 +23,10 @@ const Header = (props) => {
       <Logo />
       <Nav>
         <Link to='/'><NavItem className={check1 ? "check" :"active"} onClick={() => props.checkIn('check1')}>首页</NavItem></Link>
-        <Link><NavItem className={check2 ? "check" :"active"} onClick={() => props.checkIn('check2')}>沸点</NavItem></Link>
-        <Link><NavItem className={check3 ? "check" :"active"} onClick={() => props.checkIn('check3')}>话题</NavItem></Link>
-        <Link><NavItem className={check4 ? "check" :"active"} onClick={() => props.checkIn('check4')}>小册</NavItem></Link>
-        <Link><NavItem className={check5 ? "check" :"active"} onClick={() => props.checkIn('check5')}>活动</NavItem></Link>
+        <Link to='/pins'><NavItem className={check2 ? "check" :"active"} onClick={() => props.checkIn('check2')}>沸点</NavItem></Link>
+        <Link to='/topics'><NavItem className={check3 ? "check" :"active"} onClick={() => props.checkIn('check3')}>话题</NavItem></Link>
+        <Link to='/books'><NavItem className={check4 ? "check" :"active"} onClick={() => props.checkIn('check4')}>小册</NavItem></Link>
+        <Link to='/event'><NavItem className={check5 ? "check" :"active"} onClick={() => props.checkIn('check5')}>活动</NavItem></Link>
         <NavSearchWrapper >
           <NavSearchFrom className={focused ? 'focused' : ''}>
             <NavSearch onBlur={props.handleInputBlur} onFocus={props.handleInputFocus} ></NavSearch>
@@ -34,11 +34,9 @@ const Header = (props) => {
           </NavSearchFrom>
         </NavSearchWrapper>
         <Addition>
-          <Link>
-            <Button className="writing"><span className="iconfont">&#xe647;</span>写文章</Button>
-            <Button className="reg">登录</Button>
-            <Button className="log">注册</Button>
-          </Link>
+          <Button className="writing"><span className="iconfont">&#xe647;</span>写文章</Button>
+          <Button className="reg">登录</Button>
+          <Button className="log">注册</Button>
         </Addition>
       </Nav>
     </HeaderWrapper>

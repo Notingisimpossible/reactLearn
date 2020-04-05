@@ -1,7 +1,7 @@
 import React from 'react'
-import {Header, HeaderItem} from '../style'
+import {Header, HeaderItem} from '../../../style'
 import {connect} from 'react-redux'
-import { actionCreators } from '../store'
+import { actionCreators } from '../../../store'
 
 const HomeContentHeader = (props) => {
   const {contentCheck1, contentCheck2, contentCheck3, changeContentCheck} = props

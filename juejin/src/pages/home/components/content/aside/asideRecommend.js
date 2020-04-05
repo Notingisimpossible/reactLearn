@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Tools,
   ToolsList
-} from '../style'
+} from '../../../style'
 
 const AsideRecommend = (props) => {
 

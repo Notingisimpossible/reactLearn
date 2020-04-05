@@ -1,5 +1,5 @@
 import React from 'react'
-import {  DownLoad } from '../style'
+import {  DownLoad } from '../../../style'
 const AsideDownLoad = (props) => {
   return(
     <DownLoad>

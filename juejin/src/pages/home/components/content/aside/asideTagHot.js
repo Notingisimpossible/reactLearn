@@ -4,7 +4,7 @@ import {
   TagHotHeader,
   TagList,
   List
-} from '../style.js'
+} from '../../../style.js'
 const AsideTagHot = (props) => {
   const {hotTagList} = props
   return (

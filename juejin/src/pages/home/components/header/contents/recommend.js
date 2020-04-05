@@ -1,7 +1,7 @@
 import React from 'react'
 import {Content} from '../style'
 
-const HomeContent = (props) => {
+const Recommend = (props) => {
   const {contentList} = props
   return(
     <>
@@ -42,4 +42,4 @@ const HomeContent = (props) => {
   )
 }
 
-export default HomeContent
+export default Recommend

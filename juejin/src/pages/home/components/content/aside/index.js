@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   Tag,
-} from '../style.js'
+} from '../../../style.js'
 import AsideReg from './asideReg'
 import AsideTagHot from './asideTagHot'
 import AsideDownLoad from './asideDownLoad'

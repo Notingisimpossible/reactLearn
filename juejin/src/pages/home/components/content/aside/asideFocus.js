@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   FocueUs
-} from '../style'
+} from '../../../style'
 const AsideFocusUs = (props) => {
   return(
     <FocueUs>
