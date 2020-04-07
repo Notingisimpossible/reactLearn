@@ -44,7 +44,7 @@ class About extends Component {
             </p>
             <Divider orientation="left">Me</Divider>
             <ul>
-              <li>姓名：Gong Qiang</li>
+              <li>姓名：Song Min</li>
               <li>
               <GithubOutlined />
               <a
@@ -57,27 +57,27 @@ class About extends Component {
               </li>
               <li>
                 联系方式：
-                <span>18174352598</span>
+                <span>18279526994</span>
                 <Divider type="vertical" />
                 <i className="iconfont icon-email" />
-                <a href="mailto:445722156@qq.com">445722156@qq.com</a>
+                <a href="mailto:2421665649@qq.com">2421665649@qq.com</a>
               </li>
-              <li>坐标：深圳市</li>
-              <li>学历专业：本科<Divider type="vertical" />医学</li>
+              <li>坐标：南昌市</li>
+              <li>学历专业：本科<Divider type="vertical" />软件工程</li>
               <li>
                 skill：
                 <ul>
                   <li>
-                    前端：Vue、React、ES6/7/8、Echat、Axios
+                    前端：Vue、React、ES6、Axios
                   </li>
                   <li>
-                    服务端：Node、Koa2
+                    服务端：Node、Koa
                   </li>
                   <li>
                     数据库：Mysql
                   </li>
                   <li>
-                    其他：webpack、git、nginx
+                    其他：webpack、git
                   </li>
                 </ul>
               </li>
