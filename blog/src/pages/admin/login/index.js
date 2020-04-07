@@ -1,5 +1,5 @@
 import React from 'react'
-import {Form, Input, Button, Card, Message} from 'antd'
+import {Form, Input, Button, Card} from 'antd'
 import './index.less'
 import {UserOutlined, LockOutlined} from '@ant-design/icons'
 import Particles from 'reactparticles.js'
