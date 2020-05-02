@@ -7,8 +7,13 @@
     "declarations": true
   },
   "dependencies": {
-    "egg": "^2.15.1",
-    "egg-scripts": "^2.11.0"
+    "egg": "^2.26.0",
+    "egg-bin": "^4.14.1",
+    "egg-cors": "^2.2.3",
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.11.0",
+    "egg-view-ejs": "^2.0.1",
+    "kind-of": "^6.0.3"
   },
   "devDependencies": {
     "autod": "^3.0.1",
