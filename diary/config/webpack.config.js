@@ -26,6 +26,12 @@ const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpack
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 
 const postcssNormalize = require('postcss-normalize');
+const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
+const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssWriteSvg = require('postcss-write-svg');
+const postcssCssnext = require('postcss-cssnext');
+const postcssViewportUnits = require('postcss-viewport-units');
+const cssnano = require('cssnano');
 
 const appPackageJson = require(paths.appPackageJson);
 
@@ -104,6 +110,26 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             postcssNormalize(),
+            postcssAspectRatioMini({}),
+            postcssPxToViewport({ 
+              viewportWidth: 750, // 针对 iphone6 的设计稿
+              viewportHeight: 1334, // 针对 iphone6 的设计稿
+              unitPrecision: 3,
+              viewportUnit: 'vw',
+              selectorBlackList: ['.ignore', '.hairlines', 'am'], // 这里添加 am 是因为引入了 antd-mobile 组件库，否则组件库内的单位都会被改为 vw 单位，样式会乱
+              minPixelValue: 1,
+              mediaQuery: false
+            }),
+            postcssWriteSvg({
+              utf8: false
+            }),
+            postcssCssnext({}),
+            postcssViewportUnits({}),
+            cssnano({
+              preset: "default", 
+              autoprefixer: false, 
+              "postcss-zindex": false 
+            })
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
