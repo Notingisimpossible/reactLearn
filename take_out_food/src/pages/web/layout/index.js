@@ -2,12 +2,22 @@ import React from 'react'
 import { TabBar } from 'antd-mobile';
 import {connect} from 'react-redux'
 import {actionCreater} from '../store'
+import {Route} from 'react-router-dom'
+import routes from '../../../router/web'
 
 const WebLayout = (props) => {
   const {selectedTab,tabChange} = props
+  const linkTo = (url) => {
+    props.history.push(url)
+  }
   return (
     <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-      <div style={{position: 'fixed', height: '100%', width: '100%', top: 0}}>
+      {
+        routes.map((route) => {
+          return <Route key={route.id} path={route.path} component={route.component}></Route>
+        })
+      }
+      <div style={{position: 'fixed', height: 'auto%', width: '100%', bottom: 0}}>
         <TabBar
           barTintColor="white"
           tintColor="#33A3F4"
@@ -17,13 +27,13 @@ const WebLayout = (props) => {
           <TabBar.Item
             title="首页"
             key="home"
-            icon={<div className="iconfont">&#xe600;</div>
+            icon={<div className="iconfont">&#xe7c5;</div>
             }
             selectedIcon={
-              <div className="iconfont">&#xe7c5;</div>
+              <div style={{}} className="iconfont">&#xe600;</div>
             }
             selected={selectedTab==="redTab"}
-            onPress={() => tabChange("redTab")}
+            onPress={() => {tabChange("redTab");linkTo("/web/home")}}
             badge="new"
           ></TabBar.Item>
 
@@ -36,7 +46,7 @@ const WebLayout = (props) => {
               <div className="iconfont">&#xe7c8;</div>
             }
             selected={selectedTab === "blueTab"}
-            onPress={() => tabChange("blueTab")}
+            onPress={() => {tabChange("blueTab"); linkTo("/web/rob")}}
             badge={5}
           ></TabBar.Item>
 
@@ -49,7 +59,7 @@ const WebLayout = (props) => {
               <div className="iconfont">&#xe7c6;</div>
             }
             selected={selectedTab === "yellowTab"}
-            onPress={() => tabChange("yellowTab")}
+            onPress={() => {tabChange("yellowTab");linkTo("/web/cart")}}
           ></TabBar.Item>
 
           <TabBar.Item
@@ -61,7 +71,7 @@ const WebLayout = (props) => {
               <div className="iconfont">&#xe7c9;</div>
             }
             selected={selectedTab === "greenTab"}
-            onPress={() => tabChange("greenTab")}
+            onPress={() => {tabChange("greenTab");linkTo("/web/user")}}
           ></TabBar.Item>
         </TabBar>
       </div>
