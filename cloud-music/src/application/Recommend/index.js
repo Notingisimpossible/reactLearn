@@ -7,9 +7,11 @@ import { Content } from './style'
 import * as actionCreators from './store/actionCreators'
 import { forceCheck } from 'react-lazyload'
 import Loading from '../../baseUI/loading'
-function Recommend (props) {
+import { renderRoutes } from 'react-router-config'
 
+function Recommend (props) {
   const { bannerList, recommendList, enterLoading } = props
+  const {songCount} = props
   const { getBannerDataDispatch, getRecommendListDataDispatch } = props
   useEffect(() => {
     if (!bannerList.size) {
@@ -24,7 +26,7 @@ function Recommend (props) {
   const recommendListJS = recommendList ? recommendList.toJS() : []
   
   return (
-    <Content>
+    <Content play={songCount}>
       <Scroll className="list" onScroll={forceCheck}>
         <div>
           <Slider bannerList={bannerListJS}></Slider>
@@ -32,6 +34,7 @@ function Recommend (props) {
         </div>
       </Scroll>
       {enterLoading?<Loading></Loading>:null}
+      {renderRoutes(props.route.routes)}
     </Content>
   )
 }
@@ -41,7 +44,8 @@ const mapStateToProps = (state) => ({
   // 不然每次diff对比props的时候都是不一样的引用，还是导致不必要的冲渲染，属于滥用immutable
   bannerList: state.getIn(['recommend', 'bannerList']),
   recommendList: state.getIn(['recommend', 'recommendList']),
-  enterLoading: state.getIn(['recommend', 'enterLoading'])
+  enterLoading: state.getIn(['recommend', 'enterLoading']),
+  songCount: state.getIn(["player", "playList"]).size, //尽量减少toJS操作，直接size属性就代表了list的长度
 })
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -53,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(React.memo (Recommend));
+export default connect(mapStateToProps, mapDispatchToProps)(React.memo(Recommend));

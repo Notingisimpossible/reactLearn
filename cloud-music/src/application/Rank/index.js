@@ -4,7 +4,7 @@ import { getRankList } from './store'
 import { filterIndex } from '../../api/utils'
 import Scroll from '../../baseUI/scroll'
 import Loading from '../../baseUI/loading'
-import {EnterLoading} from './../Singer/style'
+import {EnterLoading} from './../Singers/style'
 import {
   ListItem,
   List,
@@ -14,9 +14,9 @@ import {
 import { renderRoutes } from 'react-router-config'
 
 
-const renderRankList = (list, global) => {
-  const enterDetail = (name) => {
-    console.log(name)
+const renderRankList = (list, global, props) => {
+  const enterDetail = (detail) => {
+    props.history.push(`/rank/${detail.id}`)
   }
   return (
     <List globalRank={global}>
@@ -26,7 +26,7 @@ const renderRankList = (list, global) => {
             <ListItem 
               key={item.coverImgUrl}
               tracks={item.tracks}
-              onClick = {() => enterDetail(item.name)}
+              onClick = {() => enterDetail(item)}
             >
               <div className="img_wrapper">
                 <img src={item.coverImgUrl} alt="music"></img>
@@ -56,7 +56,7 @@ const renderSongList = (list) => {
 
 function Rank (props) {
 
-  const { rankList, loading } = props
+  const { rankList, loading, songCount } = props
   const { getRankListDataDispatch } = props
   let list = rankList ? rankList.toJS() : []
   let globalStartIndex = filterIndex(list)
@@ -71,13 +71,13 @@ function Rank (props) {
   }, [])
 
   return (
-    <Container>
+    <Container play={songCount}>
       <Scroll>
         <div>
           <h1 className="offical" style={displayStyle}>官方榜</h1>
-          {renderRankList(officialList)}
+          {renderRankList(officialList, null, props)}
           <h1 className="global" style={displayStyle}>全球榜</h1>
-          {renderRankList(globalList, true)}
+          {renderRankList(globalList, true, props)}
           <EnterLoading><Loading show={loading}></Loading></EnterLoading>
         </div>
       </Scroll>
@@ -89,7 +89,8 @@ function Rank (props) {
 const mapState = (state) => {
   return {
     rankList: state.getIn(['rank', 'rankList']),
-    loading: state.getIn(['rank', 'loading'])
+    loading: state.getIn(['rank', 'loading']),
+    songCount: state.getIn(['player', 'playList']).size
   }
 }
 
