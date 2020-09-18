@@ -19,7 +19,7 @@ class About extends Component {
         <Card>
           <div style={{width:'95%', paddingLeft:'5%'}}>
             <Divider orientation="left">Blog</Divider>
-            <p>一直基于 vue 写业务，所以博客选用了 react + react-router + mbox 这套技术栈，借此熟悉下 react 开发模式</p>
+            <p>一直基于 react 写业务，所以博客选用了 react + react-router + mbox 这套技术栈，借此熟悉下 react 开发模式</p>
             <p>纯函数式开发，很甜</p>
             <p>前端：react + antd + react-router + es6 + webpack + axios</p>
             <p>服务端：koa2 + mysql + sequelize</p>
