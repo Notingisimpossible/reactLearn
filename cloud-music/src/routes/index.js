@@ -8,6 +8,12 @@ const AlbumComponent = lazy (() => import ("../application/Album/"));
 const SingerComponent = lazy (() => import ("./../application/Singer/"));
 const SearchComponent = lazy (() => import ("./../application/Search/"));
 
+// const a = (b) => {
+//   return function(p) {
+//     return XMLDocument
+//   }
+// }
+
 const SuspenseComponent = Comment => props => {
   return (
     <Suspense fallback={null}>
