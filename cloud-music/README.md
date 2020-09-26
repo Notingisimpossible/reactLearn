@@ -10,3 +10,4 @@
   - prop-types?
   - 通过原型链属性共用，给函数组件设置属性，并调用传值
   - useContext useReducer
+  - Suspense, lazy
