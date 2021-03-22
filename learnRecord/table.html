@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟表格</title>
+</head>
+<body>
+
+<style type="text/css" rel="stylesheet">
+    .table {
+        display: table;
+        border: 1px solid #cccccc;
+        margin: 5px;
+        /*display: table时padding会失效*/
+    }
+    .row {
+        display: table-row;
+        border: 1px solid #cccccc;
+        /*display: table-row时margin、padding同时失效*/
+    }
+    .cell {
+        display: table-cell;
+        border: 1px solid #cccccc;
+        padding: 5px;
+        /*display: table-cell时margin会失效*/
+    }
+</style>
+<div class="table">
+    <div class="row">
+        <div class="cell">张三</div>
+        <div class="cell">李四</div>
+        <div class="cell">王五</div>
+        <div class="cell">王五</div>
+    </div>
+    <div class="row">
+        <div class="cell">张三</div>
+        <div class="cell">李四</div>
+        <div class="cell">王五</div>
+    </div>
+    <div class="row">
+      <div class="cell">张三</div>
+    </div>
+</div>
+</body>
+</html>

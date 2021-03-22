@@ -21,6 +21,7 @@ export default (state = defaultState, action) => {
   }
   if (action.type === ADD_TODO_ITEM) {
     const newState = JSON.parse(JSON.stringify(state)) // 深拷贝
+    // console.log(state,'a');
     newState.list.push(newState.inputValue)
     newState.inputValue = ''
     return newState

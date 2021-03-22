@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+    }
+
+    .box {
+      display: inline-block;
+      height: 200px;
+      width: 200px;
+      background-color: lawngreen;
+      vertical-align: middle;
+    }
+
+    body:after {
+      display: inline-block;
+      content: '';
+      vertical-align: middle;
+      height: 100%;
+    }
+
+    a::after {
+      content: "("attr(href)")";
+    }
+    .box1 {
+      width: 0;
+      height: 0;
+      border: 30px solid red;
+      border-color: transparent transparent red;
+    }
+    .input::selection{
+      color: teal;
+    }
+    .box2{
+      width: 200px;
+      height: 200px;
+      background-color: violet;
+      display: table-cell;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .child{
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      background-color: yellow;
+      white-space: nowrap;/*不换行*/
+      overflow: hidden;/* 超出隐藏*/
+      text-overflow: ellipsis; 
+      /* 超出打点 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">box</div>
+  <a href="www.baidu.com" alt="百度">百度</a>
+  <div class="box1"></div>
+  <div class="box2">
+    <div class="child">3212312312312123123121231231231231321231231231231231231231</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" accept=".png" onclick="handleChange"/>
+  <script>
+    var input = document.getElementsByTagName('input')[0]
+    const handleChange = (e) => {
+      console.log(e)
+    }
+  </script>
+</body>
+</html>

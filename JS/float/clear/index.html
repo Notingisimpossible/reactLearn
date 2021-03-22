@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      background-color: aqua;
+      height: auto;
+      width: 100vw;
+    }
+    #box1{
+      height: 200px;
+      width: 33vw;
+      float: left;
+      background-color: yellow;
+    }
+    #box2{
+      height: 200px;
+      width: 33vw;
+      float: left;
+      background-color: green;
+    }
+    #box3{
+      height: 200px;
+      width: 33vw;
+      float: left;
+      background-color: red;
+    }
+    #box::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <div id="box1">11</div>
+    <div id="box2">22</div>
+    <div id="box3">33</div>
+  </div>
+</body>
+</html>

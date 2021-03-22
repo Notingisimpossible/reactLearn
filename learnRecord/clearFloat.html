@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .box{
+      height: 100%;
+      width: 100vw;
+      background-color: red;
+      display: table;
+      /* font-size: 0; */
+
+      /* overflow: hidden; */
+      /* float: left; */
+      /* position: absolute; */
+      /* display: inline-block; */
+      /* display: table-cell; */
+      /* display: flow-root; */
+      /* overflow: scroll; */
+      /* overflow: auto; */
+      /* column-span: all; */
+      vertical-align: middle;
+    }
+    .box::after{
+      display: block;
+      content: "";
+      clear: both;
+    }
+    .one{
+      height: 100px;
+      width: 100px;
+      background-color: salmon;
+      float: left;
+      margin-left: 20px;
+      text-align: center;
+      line-height: 100px;
+    }
+    .two{
+      height: 200px;
+      width: 200px;
+      background-color: yellow;
+      float: left;
+    }
+    .three{
+      height: 100px;
+      width: 100px;
+      background-color: springgreen;
+      float: left;
+    }
+    .four{
+      height: 100px;
+      width: 100px;
+      line-height: 100px;
+      background-color: slateblue;
+      float: left;
+      text-align: center;
+    }
+    .four-child{
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      background-color: teal;
+      vertical-align: middle;
+    }
+    .a{
+      width: 100px;
+      height: 100px;
+      background-color: lawngreen;
+      display: inline-block;
+      word-spacing:0rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <div class="three">three</div>
+    <div class="four">
+      <div class="four-child"></div>
+    </div>
+    <div class="a"></div>
+    <div class="a"></div>
+  </div>
+</body>
+</html>

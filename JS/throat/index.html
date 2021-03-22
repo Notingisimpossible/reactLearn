@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <button>+</button>
+  </div>
+
+  <script>
+    let box = document.getElementById('box');
+    let bu = document.getElementsByTagName('button')[0];
+    let num = 0;
+    let node = document.createElement('span');
+    node.innerHTML = num;
+    box.appendChild(node);
+
+    const add = () => {
+      num++;
+      node.innerHTML = num;
+    }
+    // // 节流
+    // const throat = (callback, wait) => {
+    //   let time = 0;
+    //   return function() {
+    //     var now = new Date().getTime();
+    //     var args = arguments;
+    //     if(now - time > wait) {
+    //       time = now;
+    //       callback.apply(null, args);
+    //     }
+    //   }
+    // }
+
+    // 第二版
+    const throat = (callback, wait) => {
+      let timer;
+      return function() {
+        var args = arguments;
+        if(!timer) {
+          timer = setTimeout(() => {
+            callback.apply(null, args);
+            timer = null; // 清除timer的引用
+          }, wait)
+        }
+      }
+    }
+    
+    bu.addEventListener('click', throat(add, 2000));
+
+</script>
+</body>
+</html>

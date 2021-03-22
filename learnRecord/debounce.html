@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <button onclick="add1()">click me</button>
+  <script>
+    let h = document.getElementsByTagName("h1")
+    let count = 0
+    h[0].innerText = count
+    // 防抖
+    function debounce(fn, delay) {
+      var timer
+      return function () {
+        if(timer)clearTimeout(timer)
+        timer = setTimeout(() => {
+          fn.apply(null, ...arguments)
+        }, delay)
+      }
+    }
+    // 节流
+    function throate(fn, delay) {
+      var timer
+      return function() {
+        if(!timer){
+          timer = setTimeout(()=>{
+            timer = null
+            fn()
+          },delay)
+        }
+      }
+    }
+    function add() {
+      count++
+      h[0].innerText = count
+    }
+    const add1 = throate(add,1000)
+  </script>
+</body>
+
+</html>

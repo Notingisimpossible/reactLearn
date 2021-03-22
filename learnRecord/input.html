@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <input id="input" type="text">
+  </div>
+  <script>
+    let input = document.querySelectorAll("input")
+    input[0].onclick = function(){
+      console.log("onClick")
+    }
+    input[0].onmousedown = function() {
+      console.log("onmouseDown")
+    }
+    input[0].onmouseup = function() {
+      console.log("onmouseUp")
+    }
+    input[0].onfocus = function() {
+      console.log('focus')
+    }
+  </script>
+</body>
+</html>
