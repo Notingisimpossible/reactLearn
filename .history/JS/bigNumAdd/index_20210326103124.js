@@ -1,5 +1,5 @@
 let a = '2222';
-let b = '5';
+let b = '51';
 
 function bigNumAdd(x, y) {
   let maxLen = Math.max(x.length, y.length);
@@ -12,7 +12,7 @@ function bigNumAdd(x, y) {
     let num = sum%10;
     result = num + result;
   }
-  return result;
+  return result();
 }
 let sum = bigNumAdd(a, b);
 console.log(sum);

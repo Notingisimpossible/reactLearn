@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .nBox{
+      width: 256px;
+      height: 172px;
+      margin-top: 30px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: grey;
+    }
+    .iBox{
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+  </div>
+
+  <script>
+    let dom = document.getElementById('box');
+    for(let i = 0; i < 20; i++) {
+      let node = document.createElement('div');
+      let div = document.createElement('div');
+      let img = document.createElement('img');
+      let span = document.createElement('span');
+      node.setAttribute('class', 'nBox');
+      div.setAttribute('classs', 'iBox');
+      img.src = './img/circle.png'
+      span.textContent = "测试一下"
+      div.appendChild(img);
+      node.appendChild(div);
+      node.appendChild(span);
+      dom.appendChild(node);
+    }
+  </script>
+</body>
+</html>

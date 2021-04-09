@@ -1,5 +1,5 @@
 let a = '2222';
-let b = '5';
+let b = '51';
 
 function bigNumAdd(x, y) {
   let maxLen = Math.max(x.length, y.length);

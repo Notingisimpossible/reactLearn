@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .nBox{
+      position: relative;
+      width: 256px;
+      height: 172px;
+      margin-top: 30px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: #f3f3f3;
+    }
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 256px;
+      height: 172px;
+      background: rgba(101, 101, 101, 0.6);
+      color: #ffffff;
+      opacity: 0;
+    }
+    .nBox:hover .mask {
+      opacity: 1;           
+    }
+    .iBox{
+      height: 140px;
+      width: 256px;
+      display: flex; 
+      justify-content: center;
+      border-bottom: 1px solid #ededed;
+    }
+    span{
+      display: block;
+      color: #7a7a7a;
+      margin-top: 4px;
+      margin-left: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="box">
+  </div>
+
+  <script>
+    let dom = document.getElementById('box');
+    for(let i = 0; i < 20; i++) {
+      let node = document.createElement('div');
+      let div = document.createElement('div');
+      let img = document.createElement('img');
+      let span = document.createElement('span');
+      let mask = document.createElement('div');
+      mask.setAttribute('class', 'mask')
+      node.appendChild(mask);
+      node.setAttribute('class', 'nBox');
+      div.setAttribute('class', 'iBox');
+      img.src = './img/circle.png'
+      span.textContent = "测试一下"
+      div.appendChild(img);
+      node.appendChild(div);
+      node.appendChild(span);
+      dom.appendChild(node);
+    }
+  </script>
+</body>
+</html>
